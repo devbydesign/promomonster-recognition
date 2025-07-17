@@ -91,12 +91,12 @@
       padding: 0.8rem 1.2rem;
       border-radius: 8px;
       margin: 0.4rem;
-      display: inline-block;
+      display: block;
       font-size: 1.1rem;
       font-weight: 600;
       position: relative;
       border: 2px solid var(--primary-color);
-      white-space: nowrap;
+      word-wrap: break-word;
       max-width: 100%;
       box-sizing: border-box;
     }
@@ -518,6 +518,8 @@
         margin: 0.25rem;
         display: block;
         width: fit-content;
+        word-wrap: break-word;
+        max-width: 100%;
       }
       
       .finalize-program-btn,
@@ -583,6 +585,8 @@
         padding: 0.5rem 0.75rem;
         font-size: 0.85rem;
         margin: 0.2rem;
+        word-wrap: break-word;
+        max-width: 100%;
       }
       
       .selected-features {
@@ -1133,6 +1137,8 @@
         padding: 30px;
         margin: 30px 0;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        max-width: 100%;
+        overflow: hidden;
     }
 
     .form-selected-features h3 {
@@ -1147,6 +1153,9 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 15px;
+        max-width: 100%;
+        overflow: hidden;
+        width: 100%;
     }
 
     .form-feature-item {
@@ -1156,6 +1165,8 @@
         padding: 20px;
         text-align: center;
         transition: all 0.3s ease;
+        max-width: 100%;
+        overflow: hidden;
     }
 
     .form-feature-item:hover {
@@ -1169,6 +1180,7 @@
         margin-bottom: 8px;
         color: var(--primary-color);
         font-weight: 600;
+        word-wrap: break-word;
     }
 
     .form-feature-item p {
@@ -1176,6 +1188,7 @@
         line-height: 1.4;
         color: #666;
         font-style: italic;
+        word-wrap: break-word;
     }
 
     .inspirational-text {
@@ -1428,6 +1441,9 @@
      #summary-modules-list li .feature-summary-left {
          flex: 0 1 auto;
          min-width: 0;
+         word-wrap: break-word;
+         overflow-wrap: break-word;
+         word-break: break-word;
      }
 
      #summary-modules-list li .feature-summary-right {
@@ -2357,8 +2373,8 @@
             const customName = feature.replace('Custom: ', '');
             const customDescription = localStorage.getItem(`custom_desc_${customName}`);
             featureItem.innerHTML = `
-              <h4>${feature}</h4>
-              <p>${customDescription || 'A tailored recognition program designed specifically for your organization'}</p>
+              <h4 style="word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; max-width: 100%;">${feature}</h4>
+              <p style="word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; max-width: 100%;">${customDescription || 'A tailored recognition program designed specifically for your organization'}</p>
             `;
           } else {
             // Get feature data for product images
@@ -3065,7 +3081,7 @@
               const ctaSection = document.createElement('div');
               ctaSection.className = 'modal-cta-section';
               ctaSection.innerHTML = `
-                <div style="margin-top: 2rem; padding: 1.5rem; background-color: #f8f9fa; border: 2px solid var(--primary-color); border-radius: 8px; text-align: center;">
+                <div style="margin-top: 2rem; padding: 20px; background-color: #f8f9fa; border: 2px solid var(--primary-color); border-radius: 8px; text-align: center;">
                   <h4 style="margin-bottom: 1rem; color: var(--primary-color); font-size: 1.6rem;">How Are You Going To Present It?</h4>
                   <p style="margin: 0; font-weight: bold; font-size: 1.1em; color: #333;">In Person • Newsletter • Monthly Department Meeting • Deliver</p>
                   <p style="margin: 0.5rem 0 0 0; font-style: italic; color: #666;">Make every milestone moment memorable with the perfect presentation approach.</p>

@@ -877,7 +877,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const ctaSection = document.createElement('div');
                 ctaSection.className = 'modal-cta-section';
                 ctaSection.innerHTML = `
-                  <div style="margin-top: 2rem; padding: 1.5rem; background-color: #f8f9fa; border: 2px solid var(--primary-color); border-radius: 8px; text-align: center;">
+                  <div style="margin-top: 2rem; padding: 30px; background-color: #f8f9fa; border: 2px solid var(--primary-color); border-radius: 8px; text-align: center;">
                     <h4 style="margin-bottom: 1rem; color: var(--primary-color); font-size: 1.6rem;">How Are You Going To Present It?</h4>
                     <p style="margin: 0; font-weight: bold; font-size: 1.1em; color: #333;">In Person • Newsletter • Monthly Department Meeting • Deliver</p>
                     <p style="margin: 0.5rem 0 0 0; font-style: italic; color: #666;">Make every milestone moment memorable with the perfect presentation approach.</p>
@@ -1322,8 +1322,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             featureItem.innerHTML = `
-              <h4>${title}</h4>
-              <p>${customDescription || 'A tailored recognition program designed specifically for your organization'}</p>
+              <h4 style="word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; max-width: 100%;">${title}</h4>
+              <p style="word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; max-width: 100%;">${customDescription || 'A tailored recognition program designed specifically for your organization'}</p>
             `;
           } else {
             // Get feature data for product images
@@ -2065,6 +2065,37 @@ document.addEventListener('DOMContentLoaded', function() {
           { name: "Sling Bag", image: "assets/images/SlingBag2.png" },
           { name: "Insulated Drinkware", image: "assets/images/InsulatedDrinkware.png" }
         ]
+      },
+      custom: {
+        title: "Customize Your Personalized Program",
+        icon: "fas fa-edit",
+        description: `
+          <p>Create a recognition program that's uniquely yours. Whether you want to recognize innovation, teamwork, customer service excellence, or any other behavior that matters to your organization, we can help you design the perfect program.</p>
+          
+          <div class="custom-form-container">
+            <h4>Tell us about your custom recognition idea:</h4>
+            <div class="custom-form-group">
+              <label for="custom-feature-name">Feature Name*</label>
+              <input type="text" id="custom-feature-name" placeholder="e.g., Innovation Awards, Customer Hero Recognition" required>
+            </div>
+            <div class="custom-form-group">
+              <label for="custom-feature-description">Description</label>
+              <textarea id="custom-feature-description" placeholder="Describe what behaviors or achievements you want to recognize, and any specific ideas you have for this program..." rows="4"></textarea>
+            </div>
+            <div class="validation-note" style="display: none; color: #d32f2f; font-size: 0.9em; margin-top: 0.5rem;">
+              Please enter a program name to continue.
+            </div>
+          </div>
+          
+          <h4>Why Custom Recognition Works</h4>
+          <p>Research shows that <span class="stat-highlight">34% higher participation rates</span> occur when recognition programs align with specific organizational values and goals.</p>
+        `,
+        products: [
+          { name: "Custom Socks", image: "assets/images/CustomSocks.png.png" },
+          { name: "Custom Glassware", image: "assets/images/CustomGlassware.png.png" },
+          { name: "Gift Cards", image: "assets/images/GiftCards.png" },
+          { name: "Custom Bundle", image: "assets/images/bundle2.PNG" }
+        ]
       }
     };
 
@@ -2144,7 +2175,7 @@ document.addEventListener('DOMContentLoaded', function() {
               const ctaSection = document.createElement('div');
               ctaSection.className = 'modal-cta-section';
               ctaSection.innerHTML = `
-                <div style="margin-top: 2rem; padding: 1.5rem; background-color: #f8f9fa; border: 2px solid var(--primary-color); border-radius: 8px; text-align: center;">
+                <div style="margin-top: 2rem; padding: 30px; background-color: #f8f9fa; border: 2px solid var(--primary-color); border-radius: 8px; text-align: center;">
                   <h4 style="margin-bottom: 1rem; color: var(--primary-color); font-size: 1.6rem;">How Are You Going To Present It?</h4>
                   <p style="margin: 0; font-weight: bold; font-size: 1.1em; color: #333;">In Person • Newsletter • Monthly Department Meeting • Deliver</p>
                   <p style="margin: 0.5rem 0 0 0; font-style: italic; color: #666;">Make every milestone moment memorable with the perfect presentation approach.</p>

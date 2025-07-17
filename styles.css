@@ -523,12 +523,14 @@ Base Section & Card Layouts
 
 /* Standard Section Styling */
 .content-section {
-  padding: 3rem 1rem;
+  padding: 3rem 30px;
   margin: 0 auto;
   max-width: 1400px;
 }
 .content-section:nth-child(even) {
   background-color: #f8f9fb;
+  padding: 3rem 30px;
+  border-radius: 15px;
 }
 .content-section h2 {
   text-align: center;
@@ -985,7 +987,7 @@ main.container > h1 + p { /* Selects paragraph immediately following h1 in main 
 .contact-info-section {
   background-color: #eaede9;
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 30px;
   margin: 2rem 0;
   max-width: 600px;
   display: flex;
@@ -2374,6 +2376,9 @@ main.container > h1 + p { /* Selects paragraph immediately following h1 in main 
 .feature-summary-left {
   flex: 0 1 auto;
   min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Feature title styling in summary output */
@@ -2420,6 +2425,7 @@ main.container > h1 + p { /* Selects paragraph immediately following h1 in main 
   margin-top: 0.25rem;
   font-size: 0.95rem;
   line-height: 1.4;
+  word-wrap: break-word;
 }
 
 .feature-product-images {
@@ -2451,6 +2457,9 @@ main.container > h1 + p { /* Selects paragraph immediately following h1 in main 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
+  max-width: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 
 .form-feature-item {
@@ -2460,6 +2469,8 @@ main.container > h1 + p { /* Selects paragraph immediately following h1 in main 
   padding: 20px;
   text-align: center;
   transition: all 0.3s ease;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .form-feature-item:hover {
@@ -2473,6 +2484,7 @@ main.container > h1 + p { /* Selects paragraph immediately following h1 in main 
   margin-bottom: 8px;
   color: var(--primary-color);
   font-weight: 600;
+  word-wrap: break-word;
 }
 
 .form-feature-item p {
@@ -2481,6 +2493,7 @@ main.container > h1 + p { /* Selects paragraph immediately following h1 in main 
   color: #666;
   font-style: italic;
   margin-bottom: 15px;
+  word-wrap: break-word;
 }
 
 /* Browse Incentives Button Styling for summary output only */
@@ -2533,6 +2546,8 @@ main.container > h1 + p { /* Selects paragraph immediately following h1 in main 
   padding: 30px;
   margin: 30px 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .form-selected-features h3 {
@@ -2841,7 +2856,7 @@ main.container > h1 + p { /* Selects paragraph immediately following h1 in main 
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin: 2rem 0;
-  padding: 1.5rem;
+  padding: 30px;
   background-color: #f8f9fb;
   border-radius: 12px;
 }
@@ -2950,7 +2965,7 @@ main.container > h1 + p { /* Selects paragraph immediately following h1 in main 
 
 /* Reduce section padding for compact sections */
 .content-section:has(.compact-grid) {
-  padding: 2rem 0;
+  padding: 2rem 30px;
 }
 
 .content-section:has(.compact-grid) .section-intro {
@@ -3355,6 +3370,15 @@ main.container h3 {
 .wellness-effective-container {
   background-color: #ebedea;
   padding: 3rem;
+  border-radius: 15px;
+  margin: 2rem auto;
+  max-width: 1400px;
+}
+
+/* Attendance Recognition Container */
+.attendance-container {
+  background-color: #f6fcf2;
+  padding: 30px;
   border-radius: 15px;
   margin: 2rem auto;
   max-width: 1400px;
