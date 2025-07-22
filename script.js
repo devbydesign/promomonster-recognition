@@ -320,11 +320,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (isAddingToProgramBuilder1) {
       // Only add to Program Builder 1 storage
-      const isAlreadyAdded = selectedFeatures.includes(featureName);
-      if (!isAlreadyAdded) {
-        selectedFeatures.push(featureName);
-        try {
-          localStorage.setItem('selectedFeatures', JSON.stringify(selectedFeatures));
+    const isAlreadyAdded = selectedFeatures.includes(featureName);
+    if (!isAlreadyAdded) {
+      selectedFeatures.push(featureName);
+      try {
+        localStorage.setItem('selectedFeatures', JSON.stringify(selectedFeatures));
           
           // Get current canvas state
           let existingCanvasState = [];
@@ -362,29 +362,29 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Added new feature to existing canvas state:', featureName, '-> module ID:', newModuleId);
           }
           
-          button.innerHTML = '<i class="fas fa-check-circle"></i> Added!';
-          button.disabled = false; // Keep enabled so it can still be clicked
-          button.classList.add('btn-added');
-          button.style.backgroundColor = '';
-          button.style.boxShadow = '';
-          
-          if (redirectUrl) {
-             // Redirect after a short delay to allow user to see feedback
-             setTimeout(() => {
-                 window.location.href = redirectUrl;
-             }, 400); 
-          }
-          
-        } catch (e) {
-          console.error('Error saving to localStorage:', e);
-          button.innerHTML = 'Error!';
-        }
-      } else {
-        // Feature already added, but still allow navigation to program builder
+        button.innerHTML = '<i class="fas fa-check-circle"></i> Added!';
+        button.disabled = false; // Keep enabled so it can still be clicked
+        button.classList.add('btn-added');
+        button.style.backgroundColor = '';
+        button.style.boxShadow = '';
+        
         if (redirectUrl) {
-          window.location.href = redirectUrl;
+           // Redirect after a short delay to allow user to see feedback
+           setTimeout(() => {
+               window.location.href = redirectUrl;
+           }, 400); 
         }
+        
+      } catch (e) {
+        console.error('Error saving to localStorage:', e);
+        button.innerHTML = 'Error!';
       }
+    } else {
+      // Feature already added, but still allow navigation to program builder
+      if (redirectUrl) {
+        window.location.href = redirectUrl;
+      }
+    }
     } else {
       // Adding to Program Builder 2 storage only
       const isAlreadyAdded = selectedFeatures2.includes(featureName);
@@ -431,18 +431,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!isProgramBuilder1Flow) {
       // If not Program Builder 1 flow, fall back to localStorage check
-      let selectedFeatures = [];
-      try {
-        const stored = localStorage.getItem('selectedFeatures');
-        if (stored) selectedFeatures = JSON.parse(stored);
-      } catch (e) {
-        console.error('Error reading localStorage:', e);
-        return;
-      }
-      
-      buttons.forEach(button => {
-          const featureName = button.dataset.featureName;
-          if (selectedFeatures.includes(featureName)) {
+    let selectedFeatures = [];
+    try {
+      const stored = localStorage.getItem('selectedFeatures');
+      if (stored) selectedFeatures = JSON.parse(stored);
+    } catch (e) {
+      console.error('Error reading localStorage:', e);
+      return;
+    }
+    
+    buttons.forEach(button => {
+        const featureName = button.dataset.featureName;
+        if (selectedFeatures.includes(featureName)) {
               button.innerHTML = '<i class="fas fa-check-circle"></i> Added - View Program';
               button.classList.add('btn-added');
               button.style.backgroundColor = '';
