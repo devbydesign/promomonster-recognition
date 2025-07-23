@@ -1550,7 +1550,8 @@ document.addEventListener('DOMContentLoaded', function() {
             planSummarySection.style.display = 'block';
             planSummarySection.scrollIntoView({ behavior: 'smooth' });
         }
-        
+        // REMOVING THE MAIL LOGIC SINCE THIS IS NOW UTILIZING EMAILJS.
+        /*
         const subject = `Program Plan Submission from ${firstName} ${lastName}`;
         const body = `New Program Plan Request:\n\nSelected Modules:\n- ${selectedModuleNames.join('\n- ')}\n\nContact Information:\nName: ${firstName} ${lastName}\nCompany: ${companyName}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}`;
         const mailtoLink = `mailto:rbadiner@rbbmarketing.com,theresa@stayvisible.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -1558,7 +1559,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             window.location.href = mailtoLink;
         }, 1000);
-
+        */
         generateCaptcha();
       });
     }
