@@ -49,6 +49,21 @@ const navigationHTML = `
 </header>
 `;
 
+function ensureFooterLoaded() {
+  if (typeof window.loadFooter === 'function') {
+    try { window.loadFooter(); } catch(e) { console.error(e); }
+    return;
+  }
+  // Dynamically load footer.js then inject footer
+  const existing = document.querySelector('script[src$="footer.js"]');
+  if (existing) return; // it will call itself on load
+  const s = document.createElement('script');
+  s.src = 'footer.js';
+  s.defer = true;
+  s.onload = () => { if (typeof window.loadFooter === 'function') window.loadFooter(); };
+  document.head.appendChild(s);
+}
+
 // Function to load navigation and set active states
 function loadNavigation() {
   // Insert navigation HTML
@@ -93,6 +108,9 @@ function loadNavigation() {
       link.classList.add('active');
     }
   });
+
+  // Load standardized footer
+  ensureFooterLoaded();
 }
 
 // Load navigation when DOM is ready
