@@ -33,7 +33,7 @@ const footerInnerHTML = `
     </div>
   </div>
   <div class="container copyright">
-    <p>&copy; <span id="current-year"></span> PromoMonster. All rights reserved.</p>
+    <p>Website created by RBB Marketing. All rights reserved.</p>
   </div>
 `;
 
