@@ -55,3 +55,4 @@ if (document.readyState === 'loading') {
 } else {
   loadFooter();
 }
+
