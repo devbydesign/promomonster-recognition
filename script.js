@@ -1259,7 +1259,13 @@ document.addEventListener('DOMContentLoaded', function() {
                populateFormFeatures();
                generateCaptcha();
                contactSection.style.display = 'block';
-               contactSection.scrollIntoView({ behavior: 'smooth' });
+               // Scroll a bit further to ensure the full form is visible
+          requestAnimationFrame(() => {
+            const rect = contactSection.getBoundingClientRect();
+            const extraOffset = Math.round(window.innerHeight * -0.03);
+            const y = rect.top + window.scrollY + extraOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          });
            }
         });
     }
